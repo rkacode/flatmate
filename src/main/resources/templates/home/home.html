@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head lang="en">
+
+    <title>Spring Framework Guru</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link th:href="@{css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<h1>Hello flatmate!</h1>
+
+<div sec:authorize="isAuthenticated()">
+    <h2> You are logged as <span sec:authentication="name">Unknown</span> </h2>
+</div>
+
+</body>
+</html>

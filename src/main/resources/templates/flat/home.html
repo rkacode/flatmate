@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Framework Guru</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link th:href="@{css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<h1>This is your flat!</h1>
+
+<div th:if="${flat.owner}">
+
+    <h3> You're the owner of the flat, you can add new members </h3>
+
+</div>
+
+<ul>
+    <li>Add members by email</li>
+    <li>Add expense</li>
+    <li>Schedule cleaning</li>
+    <li>Create reminder</li>
+</ul>
+
+<h3 th:text="${flat.name}"></h3>
+
+<h2> users </h2>
+
+<ul th:each="user : ${flat.users}">
+    <li th:text="${user.email}" />
+</ul>
+
+</body>
+</html>
